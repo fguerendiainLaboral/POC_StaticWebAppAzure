@@ -1,0 +1,28 @@
+<p-card header="header">
+    <div>
+        <p-dropdown 
+        [options]="ddwProductList" 
+        [(ngModel)]="ddwProductSelected" 
+        placeholder="{{ddwnPlaceHolder}}"
+        optionLabel="name" 
+        [filter]="true" 
+        filterBy="name" 
+        (onChange)="setProductData()"
+        >
+            <div>{{ddwProductSelected?.name}}</div>
+        </p-dropdown>
+    </div>
+
+    <app-product-form></app-product-form>    
+    
+    <p-footer class="p-d-flex p-jc-end sale-btn-group">
+        <button *ngIf="selectedProduct?.productId" pButton pRipple type="button" label="{{lblProductBtnCancel}}" class="p-mr-2 p-button-raised p-button-danger" (click)="cancelEditProduct()"></button>
+        <button *ngIf="selectedProduct?.productId" pButton pRipple type="button" label="{{lblProductBtnEdit}}" class="p-button-raised" (click)="editProduct()"></button>
+        <button *ngIf="!selectedProduct?.productId" pButton pRipple type="button" label="{{lblProductBtnAdd}}" class="p-mr-2 p-button-raised" (click)="newProduct()"></button>
+    </p-footer>
+</p-card>
+
+<ng-template *ngIf="modalData.visible">
+    <app-modal-message [modalData]=modalData [modalType]=''></app-modal-message>
+
+</ng-template>

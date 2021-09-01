@@ -1,0 +1,43 @@
+@import "../../../styles/colorPalette.scss";
+
+.navBarPanelMenu{
+
+    ::ng-deep .p-panelmenu .p-panelmenu-panel .p-panelmenu-header > a {
+       background: $canvas-light-color;
+       border: 0;
+     }
+
+     ::ng-deep .p-panelmenu .p-panelmenu-panel:first-child .p-panelmenu-header > a {
+        border-top: 5px;
+      }
+
+      ::ng-deep .p-panelmenu .p-panelmenu-panel .p-panelmenu-header > a:hover {
+        background: $base-light-hover-color;
+      }
+ 
+      ::ng-deep .p-panelmenu .p-panelmenu-header > a:focus {
+        box-shadow: none;
+        
+      }
+
+      ::ng-deep .p-panelmenu .p-panelmenu-panel:last-child .p-panelmenu-content {
+        padding-top: 0;
+        padding-bottom: 0;
+        border: 0;
+      }
+
+      ::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled) {
+        box-shadow: none;
+      }      
+      
+
+      ::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover {
+        background: $base-light-hover-color;
+      }      
+
+      ::ng-deep .p-panelmenu-icon {
+        order: 3; //here we are moving it to last position
+        margin-left: auto;
+      }
+
+}

@@ -1,0 +1,11 @@
+@import '../../../../styles/colorPalette.scss';
+
+.left-data-box, .right-data-box{
+    font-size: 14px;
+}
+
+.costumerDataLbl{
+    padding-right: 10px;
+    color: $canvas-dark-color;
+    font-weight: bold;
+}

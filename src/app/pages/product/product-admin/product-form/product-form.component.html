@@ -1,0 +1,37 @@
+<ng-container class="p-fluid" *ngIf="formState$ | async as formState">
+    <form >
+        <div class="p-field" *ngIf="!formState.new">
+            <label for="inputProductId">{{lblProductId + ':'}}</label>
+            <input #inputProductId type="text" pInputText value="{{formState.productId}}" [disabled]="formState.productId"> 
+        </div>
+        <div class="p-field">
+            <label for="inputBrand">{{lblBrand + ':'}}</label>
+            <input #inputBrand type="text" pInputText value="{{formState.brand}}" (change)="setValue('brand', inputBrand.value )"> 
+        </div> 
+        <div class="p-field">
+            <label for="inputDescription">{{lblDescription + ':'}}</label>
+            <input #inputDescription type="text" pInputText value="{{formState.description}}" (change)="setValue('description', inputDescription.value )"> 
+        </div>
+        <div class="p-field">
+            <label for="inputHeading">{{lblHeading + ':'}}</label>
+            <input #inputHeading type="text" pInputText value="{{formState.heading}}" (change)="setValue('heading', inputHeading.value )"> 
+        </div>
+        <div class="p-field">
+            <label for="inputName">{{lblName + ':'}}</label>
+            <input #inputName type="text" pInputText value="{{formState.name}}" (change)="setValue('name', inputName.value )"> 
+        </div>
+        <div class="p-field">
+            <label for="inputMeasure">{{lblMeasure + ':'}}</label>
+            <input #inputMeasure type="text" pInputText value="{{formState.package?.measure}}" (change)="setValue('measure', inputMeasure.value )"> 
+        </div>
+        <div class="p-field">
+            <label for="inputUnitsPerPack">{{lblUnitsPerPack + ':'}}</label>
+            <input #inputUnitsPerPack type="number" pInputText value="{{formState.package?.unitsPerPack}}" (change)="setValue('unitsPerPack', inputUnitsPerPack.value )"> 
+        </div>
+        <div class="p-field">
+            <label for="inputType">{{lblType + ':'}}</label>
+            <input #inputType type="text" pInputText value="{{formState.type}}" (change)="setValue('type', inputType.value )"> 
+        </div>
+    
+    </form>
+</ng-container>

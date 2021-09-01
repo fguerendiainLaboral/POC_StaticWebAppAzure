@@ -1,0 +1,84 @@
+<div class="p-d-flex p-pt-5 p-pl-5" *ngIf="costumer">
+    <div class="left-data-box p-pr-5">
+        <div class="costumerIdStyle p-pb-3 p-d-flex">
+            <div class="costumerDataLbl">
+                {{lblCostumerId + ':'}}
+            </div>
+            <div>
+                {{costumer?.costumerId}}
+            </div>
+        </div>
+        <div *ngIf="costumer?.businessName then costumerLegalPerson else costumerPhysicalPerson"></div>
+    </div>
+    <div class="right-data-box p-pl-5">
+        <div class="costumerEmailStyle p-pb-3 ">
+            <div class="p-d-flex p-pb-1" *ngFor="let email of costumer?.emails; index as i">
+                <div class="costumerDataLbl">
+                    {{lblEmail + ' ' + (i+1) + ':'}}
+                </div>
+                <div>
+                    {{email}}
+                </div>
+            </div>
+        </div>            
+        <div class="costumerPhoneStyle p-pb-3 ">
+            <div class="p-d-flex p-pb-1" *ngFor="let phone of costumer?.phones; index as i">
+                <div class="costumerDataLbl">
+                    {{lblPhone + ' ' + (i+1) + ':'}}
+                </div>
+                <div>
+                    {{phone | phoneFormatter}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<ng-template #costumerLegalPerson> 
+    <div class="costumerNameStyle p-d-flex p-pb-3 ">
+        <div class="costumerDataLbl">
+            {{lblCostumerBusinessName + ':'}}
+        </div>
+        <div>
+            {{costumer?.businessName}}
+        </div>
+    </div>
+    <div class="costumerIdentificationStyle p-d-flex p-pb-3 ">
+        <div class="costumerDataLbl">
+            {{lblCostumerCuit + ':'}}
+        </div>
+        <div>
+            {{costumer?.cuit | cuitFormatter}}
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #costumerPhysicalPerson> 
+    <div class="costumerNameStyle p-d-flex p-pb-3 ">
+        <div class="costumerDataLbl">
+            {{lblCostumerName + ':'}}
+        </div>
+        <div>
+            {{costumer?.lastName + ', ' + costumer?.surName}}
+        </div>
+    </div>
+    <div class="costumerIdentificationStyle p-d-flex p-pb-3 ">
+        <div class="costumerDataLbl">
+            {{lblCostumerDni + ':'}}
+        </div>
+        <div>
+            {{costumer?.dni | dniFormatter}}
+        </div>
+    </div>
+</ng-template>
+
+  
+
+
+
+
+
+

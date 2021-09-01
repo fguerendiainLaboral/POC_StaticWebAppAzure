@@ -1,0 +1,70 @@
+@import "./colorPalette.scss";
+
+.p-card {
+    margin: 30px 40px;
+    padding: 20px;
+
+}
+.p-card.p-component{
+    border-radius: 10px;
+}
+
+.p-button-raised{
+    border-radius: 5px;
+    background-color: $baner-light-color;
+    border-color: $baner-light-color;
+}
+
+.p-button-raised:hover{
+    background-color: $background-light-color !important;
+    border-color: $background-light-color !important;
+}
+
+.p-button-raised.p-button-danger{
+    background-color: $btn-danger-color !important;
+    border-color: $btn-danger-color !important;
+}
+
+.p-button.p-button-danger:enabled:focus{
+    box-shadow: none;
+}
+
+.p-button-raised.p-button-danger:hover{
+    background-color: $btn-danger-color-hover !important;
+    border-color: $btn-danger-color-hover !important;
+}
+
+.p-dropdown{
+    width: 100%;
+}
+
+.p-dropdown:focus{
+    box-shadow: none;
+}
+
+.p-dropdown:not(.p-disabled).p-focus{
+    box-shadow: none;
+    border-color: $background-light-color;
+}
+
+.p-dropdown:not(.p-disabled):hover{
+    border-color: $background-light-color;
+}
+
+.p-inputtext:enabled:focus{
+    box-shadow: none;
+    border-color: $background-light-color;
+}
+
+.p-inputtext:enabled:hover{
+    border-color: $background-light-color;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight{
+    background-color: $baner-light-color;
+    color: $text-light-color
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover{
+    background-color: $base-light-hover-color;
+}

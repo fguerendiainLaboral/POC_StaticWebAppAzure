@@ -1,0 +1,23 @@
+@import "./colorPalette.scss";
+/* You can add global styles to this file, and also import other style files */
+
+html body {
+    height: 100%;
+
+}
+
+body{
+    background-color: $canvas-dark-color;
+    margin: 0;
+}
+
+p {
+    font-family: 'Source Serif Pro', serif;
+    color: $text-dark-color;
+}
+
+h1 h2 h3 h4 h5 h6 {
+    font-family: 'Open Sans', sans-serif;
+    color: $text-dark-color;
+}
+

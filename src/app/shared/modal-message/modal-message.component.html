@@ -1,0 +1,12 @@
+<p-dialog 
+    header="modalData.header" 
+    [(visible)]="modalData.visible"
+    [draggable]="modalData.draggable"
+    [modal]="modalData.modal" 
+    [responsive]="true" 
+    [style]="{width: '%100', minWidth: '%100'}" 
+    [maximizable]="false" 
+    [baseZIndex]="modalData.baseZIndex">
+    modalData.message
+</p-dialog>
+<button type="button" ((click)="closeModal()" pButton icon="icon" label="label"></button>>

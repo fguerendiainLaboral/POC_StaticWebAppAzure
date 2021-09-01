@@ -1,0 +1,30 @@
+<p-card>
+    <p-dropdown 
+        [options]="ddwnCostumerList" 
+        [(ngModel)]="ddwnSelectedCostumer" 
+        optionLabel="name" 
+        [filter]="true" 
+        filterBy="name" 
+        placeholder="{{ddwnPlaseHolder}}"
+        (onChange)="getCostumerData()"
+        [disabled]="confirmCostumer"
+        >
+                <div>{{ddwnSelectedCostumer?.name}}</div>
+    </p-dropdown>
+
+    <app-costumer-info ></app-costumer-info>
+    <div *ngIf="!emptyChoise && !confirmCostumer">
+        <p-footer class="p-d-flex p-jc-end sale-btn-group">
+            <button pButton pRipple type="button" label="{{saleBtnAccept}}" class="p-button-raised" (click)="changeCostumer(true)" ></button>
+        </p-footer>
+    </div>
+
+</p-card>
+
+<p-card *ngIf="confirmCostumer">
+    <app-order></app-order>
+    <p-footer class="p-d-flex p-jc-end sale-btn-group">
+        <button pButton pRipple type="button" label="{{saleBtnCancel}}" class="p-mr-2 p-button-raised p-button-danger" (click)="changeCostumer(false)"></button>
+        <button pButton pRipple type="button" label="{{saleBtnAccept}}" class="p-button-raised"></button>
+    </p-footer>
+</p-card>
